@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, View, StyleSheet } from 'react-native';
+import { FlatList, View, StyleSheet, SafeAreaView, StatusBar } from 'react-native';
 import RepositoryItem from './RepositoryItem';
 
 const styles = StyleSheet.create({
@@ -59,13 +59,32 @@ const ItemSeparator = () => <View style={styles.separator} />;
 
 const RepositoryList = () => {
     return (
-        <FlatList
-            data={repositories}
-            ItemSeparatorComponent={ItemSeparator}
-            renderItem={RepositoryItem} keyExtractor={item => item.id}
-        // other props
-        />
+        <SafeAreaView style={styli.container}>
+
+            <FlatList
+                data={repositories}
+                ItemSeparatorComponent={ItemSeparator}
+                renderItem={RepositoryItem} keyExtractor={item => item.id}
+            // other props
+            />
+        </SafeAreaView>
     );
 };
+
+const styli = StyleSheet.create({
+    container: {
+        flex: 1,
+        marginTop: StatusBar.currentHeight || 0,
+    },
+    item: {
+        backgroundColor: '#f9c2ff',
+        padding: 20,
+        marginVertical: 8,
+        marginHorizontal: 16,
+    },
+    title: {
+        fontSize: 32,
+    },
+});
 
 export default RepositoryList;
