@@ -1,20 +1,40 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
+import Text from "./Text"
 
 const RepositoryItem = (props) => {
     console.log(props)
     return (
-        <View style={page.container}>
+        <View style={styles.container}>
 
-            <Text >
+            <Text color="secondary">
                 Fullname: {props.item.fullName}
-                Description: {props.item.description}
-                Language: {props.item.language}
-                Stars: {props.item.stars}
-                Forks: {props.item.forks}
-                Reviews: {props.item.reviews}
-                Rating: {props.item.rating}
             </Text>
+            <Text>
+
+                Description: {props.item.description}
+            </Text>
+            <Text>
+
+                Language: {props.item.language}
+            </Text>
+            <Text>
+                Stars: {props.item.forksCount}
+
+            </Text>
+            <Text>
+                Forks: {props.item.stargazersCount}
+            </Text>
+            <Text>
+                Reviews: {props.item.ratingAverage}
+
+            </Text>
+
+
+            <Text color="secondary">
+                Rating: {props.item.reviewCount}
+            </Text>
+
         </View >
         // <FlatList
         //     data={repositories}
@@ -25,15 +45,22 @@ const RepositoryItem = (props) => {
     );
 };
 
-const page = StyleSheet.create({
+const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 24,
+        padding: 15,
         backgroundColor: '#fff',
     },
     text: {
-        fontSize: 30,
-        color: '#000'
+        color: 'grey',
+        fontSize: 14,
+    },
+    blueText: {
+        color: 'blue',
+    },
+    bigText: {
+        fontSize: 24,
+        fontWeight: '700',
     },
 });
 export default RepositoryItem;

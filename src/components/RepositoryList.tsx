@@ -25,10 +25,10 @@ const repositories = [
         fullName: 'rails/rails',
         description: 'Ruby on Rails',
         language: 'Ruby',
-        forksCount: 18349,
-        stargazersCount: 45377,
-        ratingAverage: 100,
-        reviewCount: 2,
+        forksCount: 18349, //stars
+        stargazersCount: 45377, //forks
+        ratingAverage: 100, //reviews
+        reviewCount: 2, //rating
         ownerAvatarUrl: 'https://avatars1.githubusercontent.com/u/4223?v=4',
     },
     {
