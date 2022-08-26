@@ -5,12 +5,12 @@ import Text from "./Text"
 const RepositoryItem = (props) => {
     console.log(props)
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, styles.flexContainer]}>
 
             <Text color="secondary">
                 Fullname: {props.item.fullName}
             </Text>
-            <Text>
+            <Text color="secondary">
 
                 Description: {props.item.description}
             </Text>
@@ -62,5 +62,9 @@ const styles = StyleSheet.create({
         fontSize: 24,
         fontWeight: '700',
     },
+    flexContainer: {
+        flexDirection: 'column',
+        justifyContent: "center",
+    }
 });
 export default RepositoryItem;

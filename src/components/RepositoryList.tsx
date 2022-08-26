@@ -59,15 +59,14 @@ const ItemSeparator = () => <View style={styles.separator} />;
 
 const RepositoryList = () => {
     return (
-        <SafeAreaView style={styli.container}>
+        // <SafeAreaView style={styli.container}>
 
-            <FlatList
-                data={repositories}
-                ItemSeparatorComponent={ItemSeparator}
-                renderItem={RepositoryItem} keyExtractor={item => item.id}
-            // other props
-            />
-        </SafeAreaView>
+        <FlatList
+            data={repositories}
+            ItemSeparatorComponent={ItemSeparator}
+            renderItem={RepositoryItem} keyExtractor={item => item.id}
+        // other props
+        />
     );
 };
 
