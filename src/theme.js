@@ -1,12 +1,13 @@
 const theme = {
     colors: {
       textPrimary: '#24292e',
-      textSecondary: '#586069',
+      textSecondary: '#fff',
       primary: '#0366d6',
+      backgroundAppBar: '#24292e'
     },
     fontSizes: {
-      body: 14,
-      subheading: 16,
+      body: 18,
+      subheading: 26,
     },
     fonts: {
       main: 'System',
