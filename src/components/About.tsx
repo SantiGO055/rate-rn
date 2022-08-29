@@ -1,5 +1,5 @@
 import React from 'react'
-import { TouchableOpacity, Text } from 'react-native'
+import { TouchableOpacity, Text, Button } from 'react-native'
 import { Actions } from 'react-native-router-flux'
 
 const About = () => {
@@ -7,9 +7,9 @@ const About = () => {
         Actions.main()
     }
     return (
-        <TouchableOpacity style={{ margin: 128 }} onPress={goToHome}>
+        <Button title="Go to main" onPress={goToHome}>
             <Text>This is ABOUT</Text>
-        </TouchableOpacity>
+        </Button>
     )
 }
 export default About
