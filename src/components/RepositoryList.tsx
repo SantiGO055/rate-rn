@@ -6,7 +6,11 @@ const styles = StyleSheet.create({
     separator: {
         height: 10,
         borderTopColor: "grey",
-        borderTopWidth: 3
+        borderTopWidth: 10,
+        borderTopRightRadius: 10,
+        borderTopLeftRadius: 10,
+        borderBottomRightRadius: 10,
+        borderBottomLeftRadius: 10
     },
 });
 

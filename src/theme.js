@@ -6,8 +6,8 @@ const theme = {
       backgroundAppBar: '#24292e'
     },
     fontSizes: {
-      body: 18,
-      subheading: 26,
+      body: 15,
+      subheading: 20,
     },
     fonts: {
       main: 'System',

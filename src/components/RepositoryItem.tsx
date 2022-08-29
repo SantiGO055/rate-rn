@@ -33,14 +33,7 @@ const RepositoryItem = (props) => {
         // />
     );
 };
-const BoxLanguage = ({ text }) => {
-    return (
 
-        <View style={styles.language}>
-            <Text color={"textSecondary"}>{text}</Text>
-        </View>
-    );
-};
 const BoxTextRepo = ({ fullName, description, language, uriImage, stars, forks, reviews, rating }) => {
     let starsK = stars >= 1000 ? (stars / 1000).toString() : stars
     starsK = starsK.length > 3 ? starsK.slice(0, 4) + " k" : starsK
@@ -62,33 +55,37 @@ const BoxTextRepo = ({ fullName, description, language, uriImage, stars, forks, 
                 </Image>
                 <View style={styles.flexContainerText}>
 
-                    <Text>
+                    <Text fontWeight="bold">
                         {fullName}
                     </Text>
-                    <Text>
-                        {description}
-                    </Text>
+                    <View style={{ flexGrow: 1, flexDirection: "row" }}>
+                        <Text style={{ flex: 1, width: 1 }}>
+                            {description}
+                        </Text>
+
+                    </View>
+
                     <BoxLanguage text={language}></BoxLanguage>
                 </View>
 
             </View>
             <View style={styles.flexContainerRow}>
                 <View style={styles.flexContainerColumn}>
-                    <Text>{starsK}</Text>
-                    <Text>Stars</Text>
+                    <Text fontWeight="bold">{starsK}</Text>
+                    <Text >Stars</Text>
 
                 </View>
                 <View style={styles.flexContainerColumn}>
-                    <Text>{forksK}</Text>
-                    <Text>Forks</Text>
+                    <Text fontWeight="bold">{forksK}</Text>
+                    <Text >Forks</Text>
 
                 </View>
                 <View style={styles.flexContainerColumn}>
-                    <Text>{reviews}</Text>
-                    <Text>Reviews</Text>
+                    <Text fontWeight="bold">{reviews}</Text>
+                    <Text >Reviews</Text>
                 </View>
                 <View style={styles.flexContainerColumn}>
-                    <Text>{rating}</Text>
+                    <Text fontWeight="bold">{rating}</Text>
                     <Text>Rating</Text>
 
                 </View>
@@ -98,6 +95,14 @@ const BoxTextRepo = ({ fullName, description, language, uriImage, stars, forks, 
         </View>
     );
 }
+const BoxLanguage = ({ text }) => {
+    return (
+
+        <View style={styles.language}>
+            <Text color={"textSecondary"}>{text}</Text>
+        </View>
+    );
+};
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -105,31 +110,27 @@ const styles = StyleSheet.create({
         backgroundColor: theme.colors.textSecondary,
 
     },
-
-    blueText: {
-        color: 'blue',
-    },
-    bigText: {
-        fontSize: 24,
-        fontWeight: '700',
-    },
     flexContainerTextRepo: {
         flexDirection: 'row',
-        justifyContent: "center",
+        justifyContent: "flex-start",
 
     },
     flexContainerRow: {
         flexDirection: "row",
-        padding: 10
+        padding: 10,
+        justifyContent: "center"
     },
     flexContainerColumn: {
         flexDirection: "column",
-        paddingRight: 60
+        paddingRight: 40,
+        paddingLeft: 15,
+        justifyContent: "center"
     },
     flexContainerText: {
         flexDirection: "column",
         paddingLeft: 20,
-        flexWrap: "wrap"
+
+
     },
     image: {
         paddingTop: 50,
@@ -142,6 +143,7 @@ const styles = StyleSheet.create({
         backgroundColor: theme.colors.primary,
         borderRadius: 2,
         padding: 5,
+
 
     },
 });
